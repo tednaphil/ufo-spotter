@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Form.css';
 
-function Form() {
+function Form({addSighting}) {
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
 
@@ -12,21 +12,8 @@ function Form() {
             location,
             description
         }
-        postSighting(newSighting);
+        addSighting(newSighting);
         clearInputs()
-    }
-
-    function postSighting(sightingObj) {
-        fetch('http://localhost:3001/sightings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(sightingObj)
-        })
-        .then(response => response.json())
-        .then(data => console.log('posted sighting', data))
-        .catch(err => console.log(err.message))
     }
 
     function clearInputs() {
