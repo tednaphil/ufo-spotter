@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# UFO SPOTTER
+##Start your server
+```
+cd turing_work/3mod/practice/react-practice-servers
+node ufo-sightings/server.js
+
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
